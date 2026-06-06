@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Nilai</title>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        form {
+            width: 100vh;
+            max-width: 100%;
+            height: 50px;
+            max-height: 100%;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input[type="number"] {
+            margin-top: 10px;
+            width: 100px;
+            height: 20px;
+        }
+
+        button {
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 110px;
+            height: 27px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id=form-nilai>
+        <label for="nilai">Masukan Nilai</label>
+        <input type="number" id="nilai" name="nilai" placeholder="" />
+
+        <button type="submit">Input</button>
+    </form>
+
+
+    <!-- javascript untuk logic -->
+    <script>
+        document.getElementById("form-nilai").addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+            let nilai = document.getElementById("nilai").value;
+
+            if (nilai > 80 && nilai < 100) {
+                alert("your grade is A");
+            } else if (nilai > 60 && nilai < 80) {
+                alert("your grade is B");
+            } else if (nilai > 40 && nilai < 60) {
+                alert("your grade is C");
+            } else if (nilai < 40) {
+                alert("your grade is D");
+            } else if (nilai < 1 || nilai > 100) {
+                alert("cannot calculated your grade")
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
